@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Sport Live</title>
+    <style>
+        /* CSS styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background-color: #d32f2f;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .video-container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            background: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        video {
+            width: 100%;
+            border: 2px solid #d32f2f;
+            border-radius: 10px;
+        }
+        .play-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #d32f2f;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .play-button:hover {
+            background-color: #a52727;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Red Sport Live</h1>
+    </header>
+    <div class="video-container">
+        <video id="liveStream" controls autoplay muted>
+            <source src="https://jiotvbpklive.cdn.jio.com/bpk-tv/IDCDemo_IPL23_Sports18_MOB/Fallback/IDCDemo_IPL23_Sports18_MOB-audio_98838_eng=98800-video=2293600-433371119.m3u8" type="application/x-mpegURL">
+            Your browser does not support the video tag.
+        </video>
+        <button class="play-button" onclick="togglePlay()">Play/Pause</button>
+    </div>
+    <script>
+        // JavaScript functionality
+        const video = document.getElementById('liveStream');
+
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+    </script>
+</body>
+</html>
